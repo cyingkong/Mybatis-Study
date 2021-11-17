@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ma.dao.bill.BillMapper">
+
+    <!--增加订单-->
+    <insert id="add" parameterType="Bill">
+        insert into smbms.bill(id,billCodde,productName,productDesc,productUnit,totalPrice,isPayment)
+        values (#{id},#{billCodde},#{productName},#{productDesc},#{productUnit},#{totalPrice},#{isPayment});
+    </insert>
+
+    <!--通过billId获取Bill-->
+    <select id="getBillById" parameterType="int" resultType="bill">
+        select * from smbms.bill where id = #{id}
+    </select>
+
+</mapper>
