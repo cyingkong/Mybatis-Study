@@ -272,7 +272,25 @@ org.apache.ibatis.binding.BindingException: Type interface com.ma.dao.UserDao is
      </build>
      ```
 
-     
+
+
+
+Mybatis程序出现“**1 字节的 UTF-8 序列的字节 1 无效**”异常的处理方法（IDEA）
+
+**原因：xml文件字符编码(encoding)与idea编辑器字符编码不一致**
+
+从Mybatis官网获取的mybatis-config.xml配置文件的文件头默认指定编码为"UTF-8",而IDEA默认xml等配置文件字符编码为GBK。
+
+
+
+解决方法：
+
+1. 将<?xml version="1.0" encoding="UTF-8" ?>中的UTF-8改为UTF8
+2. 打开设置—>文件编码，将项目编码改为UTF-8
+
+![image-20211206143640419](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20211206143640419.png)
+
+
 
 # 2、CRUD
 
